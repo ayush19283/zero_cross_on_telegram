@@ -4,9 +4,10 @@ from telethon import TelegramClient,events,sync,Button
 from telethon.sessions import StringSession
 from telethon import utils
 from itertools import permutations
-api_id=8925256
-api_hash='d3a68074d2204bb004ca255cd009d337'
-str_sess='1BVtsOK8BuzXCDLbyMNLsnyiMt6ZR9B0Tdgh-3VfT7SYM7qusmsL8oStBIw92AlaVM1sUPwrgJJTpSf5O03QDZsAZzOkY935pmzD8YiRCCfWDpS2YvLq8hW09WM8XNjrB--jpkmpgQtYxwju8K4ZZc76mD9Vv-DGB9f4C_K3mhNI8ghYsvJyao0ohhVHSHbApIY_NkvnzcBrN-B77m275vMvppkv2ymSd5R8a40Za7SZgxMBvxVjY5HSnDv8dfGSgcbYPGkHyF66V0QdlgGQDJO5u8-SOnqLCqkWcHNLj6yavc6N3_x1t3urSyqpF8Lz3ZadY99bQ7Furwnrqj5kv9yt-TF1Knww='
+import os
+api_id=os.environ.get('api_id')
+api_hash=os.environ.get('api_hash')
+str_sess=os.environ.get('str_sess')
 client = TelegramClient(StringSession(str_sess), api_id, api_hash)
 
 wlist=[[0, 1, 2], [0, 10, 20], [0, 11, 22], [1, 11, 21], [2, 12, 22], [10, 11, 12], [2, 11, 20], [20, 21, 22]]
